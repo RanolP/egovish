@@ -1,0 +1,25 @@
+{
+  "name": "egovish",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@builder.io/mitosis": "^0.2.2",
+    "@builder.io/mitosis-cli": "^0.2.2"
+  },
+  "devDependencies": {
+    "@builder.io/eslint-plugin-mitosis": "^0.0.15",
+    "@types/eslint": "^8.56.9",
+    "@typescript-eslint/eslint-plugin": "^7.7.0",
+    "@typescript-eslint/parser": "^7.7.0",
+    "eslint": "^9.0.0",
+    "eslint-plugin-simple-import-sort": "^12.1.0",
+    "typescript": "^5.4.5"
+  }
+}
