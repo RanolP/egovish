@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "storybook": "pnpm -F=docs storybook",
-    "build:token": "pnpm -F=egovish-tokens build"
+    "build:token": "pnpm -F=@egovish/tokens build"
   },
   "keywords": [],
   "author": "",

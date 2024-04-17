@@ -1,0 +1,229 @@
+import tokens from "@egovish/tokens";
+import { calcAPCA } from 'apca-w3';
+import { Story, Meta, ColorPalette, ColorItem, BooleanControl } from '@storybook/blocks';
+import { useState, useEffect, useRef } from 'react';
+import Title from '../../../components/Title';
+
+<Meta title="Style Guide/색상 (Color)" />
+
+# <Title scope="스타일 가이드" korean="색상" english="Color" />
+
+## Key colors
+
+정부 상징을 구성할 때엔 대표 색상인 정부 청색, 정부 회색, 정부 적색을 사용한다.
+
+- 웹 콘텐츠 접근성 지침(WCAG)의 AA 레벨을 충족하는 색상별 10단계(0, 100 제외)를 지원하며, Grayscale을 제외한 색상별 주요 색상은 50으로 한다.
+- 색상단계는 가장 밝은 색상을 0, 가장 어두운 색상을 100으로 한다.
+- 색을 언급할 때엔 명확한 소통을 위해 각 색상을 나타내는 이름을 쓰도록 한다.
+
+> ✅ 브랜드 색상 사용 시에도 Key color 규칙 적용을 권고
+>
+> - 명암비가 웹 콘텐츠 접근성 지침(WCAG 2.1)의 AA 레벨을 충족해야 하고, 색상별 10단계(0, 100 제외)를 제공해야 한다.
+
+## Primary color
+
+> ❌ TODO
+
+## Secondary color
+
+> ❌ TODO
+
+## Grayscale
+
+> ❌ TODO
+
+## Alpha
+
+> ❌ TODO
+
+## Key Colors Proportion
+
+> ❌ TODO
+
+## Usage
+
+### States
+
+> ❌ TODO
+
+### Background
+
+> ❌ TODO
+
+### Border
+
+> ❌ TODO
+
+### Text
+
+> ❌ TODO
+
+## Point color
+
+> ❌ TODO
+
+## System colors
+
+> ❌ TODO
+
+### Danger
+
+> ❌ TODO
+
+### Warning
+
+> ❌ TODO
+
+### Success
+
+> ❌ TODO
+
+### Information
+
+> ❌ TODO
+
+
+## 팔레트
+
+- 표준 색상 팔레트는 24가지 기본 색상을 바탕으로 해, 10단계로 밝기를 조정한 색상을 제공한다.
+- Key color 외에 색상이 필요하다면 팔레트에 있는 색상값을 우선해 사용하는 것을 권장한다.
+- 독자적인 BI를 표현하고자 할 때엔 표준 팔레트 색상단계 및 규칙을 필수로 참고하도록 한다.
+
+<Palette />
+
+## 접근성
+
+- 색상의 명암비는 웹 콘텐츠 접근성 지침(WCAG)의 AA 레벨을 충족하는지 확인해야 한다.
+- 텍스트와 배경색의 명암비는 다음 조건을 충족해야 한다.
+  <table>
+    <thead>
+      <tr>
+        <th>텍스트 분류</th>
+        <th>글꼴 상태</th>
+        <th>필요 조건</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>큰 텍스트</td>
+        <td>
+            일반(Regular 400) 18px 이상 <span style={{ fontSize: '1em', color: '#7e7eaf' }}>혹은</span><br />
+            굵게(Medium 600, Bold 700) 14px 이상
+        </td>
+        <td>
+            AAA 4.5:1  <span style={{ fontSize: '1em', color: '#7e7eaf' }}>혹은</span><br />
+            AA 3:1
+        </td>
+      </tr>
+      <tr>
+        <td>작은 텍스트</td>
+        <td>
+            일반(Regular 400) 17px 미만 <span style={{ fontSize: '1em', color: '#7e7eaf' }}>혹은</span><br />
+            굵게(Medium 600, Bold 700) 13px 미만
+        </td>
+        <td>
+            AAA 7:1  <span style={{ fontSize: '1em', color: '#7e7eaf' }}>혹은</span><br />
+            AA 4.5:1
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+참고 자료: [WCAG 2.2 Understanding Docs - Understanding SC 1.4.3: Contrast (Minimum) (Level AA)](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)
+
+export function PaletteView({ label, colors }) {
+    return (
+        <section style={{ display: 'inline-block' }}>
+            <h3 style={{
+                textTransform: 'uppercase',
+                fontSize: '0.6em',
+                fontWeight: 900,
+                letterSpacing: '0.25em',
+                fontStretch: '400%',
+            }}>
+                {label}
+            </h3>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                {Object.entries(colors).map(([key, value]) => {
+                    const white = tokens.color.palette.grayscale[10];
+                    const black = tokens.color.palette.grayscale[90];
+
+                    const LcWhite = Math.abs(Number(calcAPCA(white, value)));
+                    const LcBlack = Math.abs(Number(calcAPCA(black, value)));
+
+                    const foreground = LcWhite > LcBlack ? white : black;
+
+                    return (
+                        <div
+                            key={key}
+                            style={{
+                                padding: '0.5rem',
+                                width: '10rem',
+                                height: '1rem',
+                                background: value,
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                alignItems: 'center',
+                                fontWeight: 900,
+                                color: foreground,
+                            }}
+                        >
+                            <span style={{ fontSize: '0.8em', fontFamily: 'monospace' }}>{key}</span>
+                            <span style={{ fontSize: '0.8em', fontFamily: 'monospace' }}>{value}</span>
+                        </div>
+                    )
+                })}
+            </div>
+        </section>
+    )
+}
+
+export function Palette() {
+    const [storybook, setStorybook] = useState(false)
+    const [className, setClassName] = useState('')
+    const booleanControlWrapRef = useRef()
+    useEffect(() => {
+        setClassName(booleanControlWrapRef.current?.querySelector('label')?.className);
+    }, []);
+
+    return (
+        <>
+            <div ref={booleanControlWrapRef} style={{ display: 'none' }}>
+                <BooleanControl name="" value={false} />
+            </div>
+            <label for="control-Storybook-팔레트-표시" aria-label="Storybook 팔레트 표시" className={className} style={{ marginBottom: '1rem' }}>
+                <input id="control-Storybook-팔레트-표시" type="checkbox" role="switch" name="Storybook 팔레트 표시" onChange={(e) => setStorybook(e.currentTarget.checked)} />
+                <span aria-hidden="true">KRDS식 팔레트</span>
+                <span aria-hidden="true">Storybook 팔레트</span>
+            </label>
+            {storybook ? (
+                <ColorPalette>
+                    {Object.entries(tokens.color.palette)
+                        .filter(([key]) => key !== 'grayscale')
+                        .map(([key, value]) => (
+                            <ColorItem
+                                key={key}
+                                title={key.split('-').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')}
+                                colors={value}
+                            />
+                        ))
+                    }
+                </ColorPalette>
+            ) : (
+                <main
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        flexWrap: "wrap",
+                        gap: '2rem',
+                    }}
+                >
+                    {Object.entries(tokens.color.palette)
+                        .filter(([key]) => key !== 'grayscale')
+                        .map(([key, value]) => <PaletteView key={key} label={key.replace(/-/g, ' ')} colors={value} />)
+                    }
+                </main>
+            )}
+        </>
+    );
+}
