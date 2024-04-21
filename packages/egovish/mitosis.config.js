@@ -1,5 +1,5 @@
 /** @type {import('@builder.io/mitosis'.MitosisConfig)} */
 module.exports = {
-  files: "src/**",
-  targets: ["vue3", "solid", "svelte", "react", "qwik", "webcomponent", "rsc"],
+  files: 'src/**',
+  targets: ['vue3', 'solid', 'svelte', 'react', 'qwik', 'webcomponent', 'rsc'],
 };

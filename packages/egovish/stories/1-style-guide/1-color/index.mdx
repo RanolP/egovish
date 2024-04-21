@@ -1,8 +1,8 @@
-import tokens from "@egovish/tokens";
+import tokens from '@egovish/tokens';
 import { calcAPCA } from 'apca-w3';
 import { Story, Meta, ColorPalette, ColorItem, BooleanControl } from '@storybook/blocks';
 import { useState, useEffect, useRef } from 'react';
-import Title from '../../../components/Title';
+import Title from '../../_components/Title';
 
 <Meta title="Style Guide/색상 (Color)" />
 
@@ -82,7 +82,6 @@ import Title from '../../../components/Title';
 
 > ❌ TODO
 
-
 ## 팔레트
 
 - 표준 색상 팔레트는 24가지 기본 색상을 바탕으로 해, 10단계로 밝기를 조정한 색상을 제공한다.
@@ -107,23 +106,27 @@ import Title from '../../../components/Title';
       <tr>
         <td>큰 텍스트</td>
         <td>
-            일반(Regular 400) 18px 이상 <span style={{ fontSize: '1em', color: '#7e7eaf' }}>혹은</span><br />
-            굵게(Medium 600, Bold 700) 14px 이상
+          일반(Regular 400) 18px 이상 <span style={{ fontSize: '1em', color: '#7e7eaf' }}>혹은</span>
+          <br />
+          굵게(Medium 600, Bold 700) 14px 이상
         </td>
         <td>
-            AAA 4.5:1  <span style={{ fontSize: '1em', color: '#7e7eaf' }}>혹은</span><br />
-            AA 3:1
+          AAA 4.5:1 <span style={{ fontSize: '1em', color: '#7e7eaf' }}>혹은</span>
+          <br />
+          AA 3:1
         </td>
       </tr>
       <tr>
         <td>작은 텍스트</td>
         <td>
-            일반(Regular 400) 17px 미만 <span style={{ fontSize: '1em', color: '#7e7eaf' }}>혹은</span><br />
-            굵게(Medium 600, Bold 700) 13px 미만
+          일반(Regular 400) 17px 미만 <span style={{ fontSize: '1em', color: '#7e7eaf' }}>혹은</span>
+          <br />
+          굵게(Medium 600, Bold 700) 13px 미만
         </td>
         <td>
-            AAA 7:1  <span style={{ fontSize: '1em', color: '#7e7eaf' }}>혹은</span><br />
-            AA 4.5:1
+          AAA 7:1 <span style={{ fontSize: '1em', color: '#7e7eaf' }}>혹은</span>
+          <br />
+          AA 4.5:1
         </td>
       </tr>
     </tbody>
@@ -176,6 +179,7 @@ export function PaletteView({ label, colors }) {
             </div>
         </section>
     )
+
 }
 
 export function Palette() {
@@ -191,11 +195,14 @@ export function Palette() {
             <div ref={booleanControlWrapRef} style={{ display: 'none' }}>
                 <BooleanControl name="" value={false} />
             </div>
-            <label for="control-Storybook-팔레트-표시" aria-label="Storybook 팔레트 표시" className={className} style={{ marginBottom: '1rem' }}>
-                <input id="control-Storybook-팔레트-표시" type="checkbox" role="switch" name="Storybook 팔레트 표시" onChange={(e) => setStorybook(e.currentTarget.checked)} />
-                <span aria-hidden="true">KRDS식 팔레트</span>
-                <span aria-hidden="true">Storybook 팔레트</span>
-            </label>
+            <h3>
+                색상 일람표{' '}
+                <label for="control-Storybook-팔레트-표시" aria-label="Storybook 팔레트 표시" className={className}>
+                    <input id="control-Storybook-팔레트-표시" type="checkbox" role="switch" name="Storybook 팔레트 표시" onChange={(e) => setStorybook(e.currentTarget.checked)} />
+                    <span aria-hidden="true">KRDS식 뷰</span>
+                    <span aria-hidden="true">Storybook 뷰</span>
+                </label>
+            </h3>
             {storybook ? (
                 <ColorPalette>
                     {Object.entries(tokens.color.palette)
@@ -226,4 +233,5 @@ export function Palette() {
             )}
         </>
     );
+
 }

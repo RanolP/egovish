@@ -1,5 +1,5 @@
-import { Preview } from "@storybook/react";
-import egovishLight from "./themes/egovish-light";
+import { Preview } from '@storybook/react';
+import egovishLight from './themes/egovish-light';
 
 const preview: Preview = {
   parameters: {

@@ -1,9 +1,9 @@
-import { create } from "@storybook/theming/create";
+import { create } from '@storybook/theming/create';
 
 export default create({
-  base: "light",
+  base: 'light',
 
-  brandTitle: "egovish",
+  brandTitle: 'egovish',
 
   fontBase: `"Pretendard GOV", sans-serif`,
   fontCode: `"D2Coding", monospace`,

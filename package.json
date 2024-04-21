@@ -4,10 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "storybook": "pnpm -F=docs storybook",
+    "storybook": "pnpm -F=egovish storybook",
     "build:token": "pnpm -F=@egovish/tokens build"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.2.5"
+  }
 }
