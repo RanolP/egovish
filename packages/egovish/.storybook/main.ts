@@ -1,7 +1,8 @@
 import { StorybookConfig } from '@storybook/react-vite';
+import path from 'node:path';
 
 const config: StorybookConfig = {
-  stories: ['../docs/**/*.mdx', '../docs/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  stories: ['../docs/**/*.mdx', '../src/**/*.mdx'],
   addons: [
     '@storybook/addon-onboarding',
     '@storybook/addon-links',
@@ -13,8 +14,27 @@ const config: StorybookConfig = {
     name: '@storybook/react-vite',
     options: {},
   },
-  docs: {
-    autodocs: 'tag',
+  typescript: {
+    reactDocgen: false,
+  },
+  viteFinal: config => {
+    const rule = { find: /~\/docs\/(.*)/, replacement: path.resolve(__dirname, '../docs/$1') };
+    return {
+      ...config,
+      define: {
+        ...config.define,
+        'process.env.NODE_DEBUG': false,
+      },
+      resolve: {
+        ...config.resolve,
+        alias: [
+          ...(Array.isArray(config.resolve?.alias)
+            ? config.resolve.alias
+            : Object.values(config.resolve?.alias ?? {}).map(([find, replacement]) => ({ find, replacement }))),
+          rule,
+        ],
+      },
+    };
   },
 };
 

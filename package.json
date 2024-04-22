@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "storybook": "pnpm -F=egovish storybook",
+    "build:system": "pnpm -F=egovish build",
+    "build:storybook": "pnpm -F=egovish build:storybook",
     "build:token": "pnpm -F=@egovish/tokens build"
   },
   "keywords": [],

@@ -1,6 +1,7 @@
 {
   "name": "@egovish/tokens",
   "version": "0.0.1",
+  "license": "MIT",
   "description": "Design Tokens for egovish",
   "author": "RanolP <me@ranolp.dev>",
   "main": "build/javascript/index.js",
@@ -9,8 +10,6 @@
   "scripts": {
     "build": "rm -rf build && tsx build.ts"
   },
-  "keywords": [],
-  "license": "MIT",
   "exports": {
     ".": {
       "default": "./build/javascript/index.js",
@@ -24,6 +23,6 @@
     "style-dictionary-utils": "^2.2.1",
     "tsx": "^4.7.2",
     "typescript": "^5.4.5",
-    "zx": "^8.0.1"
+    "zx": "^8.0.2"
   }
 }

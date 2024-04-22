@@ -1,0 +1,4 @@
+{
+  "eslint.experimental.useFlatConfig": true,
+  "eslint.workingDirectories": [{ "pattern": "packages/egovish/" }]
+}

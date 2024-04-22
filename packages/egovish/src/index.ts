@@ -1,1 +1,1 @@
-interface Props {}
+export * from './components/link/index';

@@ -1,23 +1,69 @@
 {
   "name": "egovish",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+  "type": "module",
+  "author": "RanolP <me@ranolp.dev>",
+  "license": "MIT",
+  "exports": {
+    "./qwik": {
+      "default": "./lib/esm/qwik/index.js",
+      "import": "./lib/esm/qwik/index.js",
+      "require": "./lib/cjs/qwik/index.cjs",
+      "types": "./lib/types/qwik/src/index.d.ts"
+    },
+    "./react": {
+      "default": "./lib/esm/react/index.js",
+      "import": "./lib/esm/react/index.js",
+      "require": "./lib/cjs/react/index.cjs",
+      "types": "./lib/types/react/src/index.d.ts"
+    },
+    "./rsc": {
+      "default": "./lib/esm/rsc/index.js",
+      "import": "./lib/esm/rsc/index.js",
+      "require": "./lib/cjs/rsc/index.cjs",
+      "types": "./lib/types/rsc/src/index.d.ts"
+    },
+    "./solid": {
+      "default": "./lib/esm/solid/index.js",
+      "import": "./lib/esm/solid/index.js",
+      "require": "./lib/cjs/solid/index.cjs",
+      "types": "./lib/types/solid/src/index.d.ts"
+    },
+    "./svelte": {
+      "default": "./lib/esm/svelte/index.js",
+      "import": "./lib/esm/svelte/index.js",
+      "require": "./lib/cjs/svelte/index.cjs",
+      "types": "./lib/types/svelte/src/index.d.ts"
+    },
+    "./vue": {
+      "default": "./lib/esm/vue/index.js",
+      "import": "./lib/esm/vue/index.js",
+      "require": "./lib/cjs/vue/index.cjs",
+      "types": "./lib/types/vue/src/index.d.ts"
+    },
+    "./webcomponent": {
+      "default": "./lib/esm/webcomponent/index.js",
+      "import": "./lib/esm/webcomponent/index.js",
+      "require": "./lib/cjs/webcomponent/index.cjs",
+      "types": "./lib/types/webcomponent/src/index.d.ts"
+    }
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "scripts": {
+    "build": "tsx scripts/build.ts",
+    "storybook": "storybook dev -p 6006",
+    "build:storybook": "storybook build",
+    "lint": "eslint ."
+  },
   "dependencies": {
-    "@builder.io/mitosis": "^0.2.2",
-    "@builder.io/mitosis-cli": "^0.2.2",
+    "@builder.io/mitosis": "^0.2.3",
     "@egovish/tokens": "workspace:^"
   },
   "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.24.1",
     "@builder.io/eslint-plugin-mitosis": "^0.0.15",
+    "@builder.io/mitosis-cli": "^0.2.3",
+    "@builder.io/qwik": "^1.5.2",
     "@chromatic-com/storybook": "^1.3.3",
     "@storybook/addon-essentials": "^8.0.8",
     "@storybook/addon-interactions": "^8.0.8",
@@ -30,15 +76,24 @@
     "@storybook/test": "^8.0.8",
     "@storybook/theming": "^8.0.8",
     "@types/apca-w3": "^0.1.3",
-    "@types/eslint": "^8.56.9",
+    "@types/eslint": "^8.56.10",
     "@types/react": "^18.2.79",
     "@typescript-eslint/eslint-plugin": "^7.7.0",
-    "@typescript-eslint/parser": "^7.7.0",
     "apca-w3": "^0.1.9",
-    "eslint": "^9.0.0",
+    "esbuild": "^0.20.2",
+    "eslint": "^9.1.0",
+    "eslint-plugin-mdx": "^3.1.5",
     "eslint-plugin-simple-import-sort": "^12.1.0",
     "prop-types": "^15.8.1",
+    "react": "^18.2.0",
     "storybook": "^8.0.8",
-    "typescript": "^5.4.5"
+    "tsx": "^4.7.2",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.7.0",
+    "vite": "^5.2.10",
+    "zx": "^8.0.2"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
   }
 }

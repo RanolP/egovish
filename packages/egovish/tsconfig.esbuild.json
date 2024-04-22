@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    // For keeping `import React from 'react';`
+    "verbatimModuleSyntax": true
+  }
+}
