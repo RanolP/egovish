@@ -9,8 +9,9 @@ export default tseslint.config(
     ignores: ['lib', 'output'],
   },
   tseslint.configs.base,
+  tseslint.configs.eslintRecommended,
   {
-    ignores: ['**/*.mdx'],
+    files: ['.storybook', 'docs', 'scripts', 'src', 'eslint.config.js', 'mitosis.config.cjs'],
     languageOptions: {
       parserOptions: {
         project: true,

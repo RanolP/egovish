@@ -16,6 +16,9 @@
       "import": "./build/javascript/index.js",
       "require": "./build/javascript/index.cjs",
       "types": "./build/javascript/index.d.ts"
+    },
+    "./variables.css": {
+      "default": "./build/css/variables.css"
     }
   },
   "devDependencies": {

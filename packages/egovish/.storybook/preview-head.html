@@ -12,3 +12,26 @@
     font-style: normal;
   }
 </style>
+<style>
+  @import url('@egovish/tokens/variables.css');
+
+  body.dark .sbdocs {
+    background: var(--color-palette-grayscale-90);
+  }
+  body.dark :where(p:not(.sb-anchor, .sb-unstyled, .sb-unstyled p)),
+  body.dark :where(h1:not(.sb-anchor, .sb-unstyled, .sb-unstyled h1)),
+  body.dark :where(h2:not(.sb-anchor, .sb-unstyled, .sb-unstyled h2)),
+  body.dark :where(h3:not(.sb-anchor, .sb-unstyled, .sb-unstyled h3)),
+  body.dark :where(h4:not(.sb-anchor, .sb-unstyled, .sb-unstyled h4)),
+  body.dark :where(h5:not(.sb-anchor, .sb-unstyled, .sb-unstyled h5)),
+  body.dark :where(h6:not(.sb-anchor, .sb-unstyled, .sb-unstyled h6)),
+  body.dark :where(li:not(.sb-anchor, .sb-unstyled, .sb-unstyled li)),
+  body.dark :where(img:not(.sb-anchor, .sb-unstyled, .sb-unstyled img)) {
+    color: var(--color-palette-grayscale-10);
+  }
+  body.dark :where(p:not(.sb-anchor, .sb-unstyled, .sb-unstyled p)) code {
+    background: var(--color-palette-grayscale-80);
+    border-color: var(--color-palette-grayscale-70);
+    color: var(--color-palette-grayscale-10);
+  }
+</style>
