@@ -5,6 +5,9 @@
   "type": "module",
   "author": "RanolP <me@ranolp.dev>",
   "license": "MIT",
+  "files": [
+    "lib"
+  ],
   "exports": {
     "./qwik": {
       "default": "./lib/esm/qwik/index.js",
@@ -50,6 +53,7 @@
     }
   },
   "scripts": {
+    "prepublish": "pnpm lint && pnpm build",
     "build": "tsx scripts/build.ts",
     "storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build",

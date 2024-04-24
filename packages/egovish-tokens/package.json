@@ -8,6 +8,7 @@
   "typings": "./build/javascript/index.d.ts",
   "type": "module",
   "scripts": {
+    "prepublish": "pnpm build",
     "build": "rm -rf build && tsx build.ts"
   },
   "exports": {

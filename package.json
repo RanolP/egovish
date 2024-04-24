@@ -1,17 +1,12 @@
 {
-  "name": "egovish",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "workspace",
+  "private": true,
   "scripts": {
     "storybook": "pnpm -F=egovish storybook",
     "build:system": "pnpm -F=egovish build",
     "build:storybook": "pnpm -F=egovish build:storybook",
     "build:token": "pnpm -F=@egovish/tokens build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "prettier": "^3.2.5"
   }

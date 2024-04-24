@@ -1,32 +1,34 @@
-import StyleDictionary from "style-dictionary-utils";
-import { $ } from "zx";
+import StyleDictionary from 'style-dictionary-utils';
+import { $ } from 'zx';
 
 const myStyleDictionary = StyleDictionary.extend({
-  source: ["src/**/*.json"],
+  source: ['src/**/*.json'],
   platforms: {
     css: {
-      transformGroup: "css",
-      buildPath: "build/css/",
+      transformGroup: 'css',
+      buildPath: 'build/css/',
       files: [
         {
-          format: "css/variables",
-          destination: "variables.css",
+          format: 'css/variables',
+          destination: 'variables.css',
           outputReferences: true,
         },
       ],
     },
     javascript: {
-      transformGroup: "js",
-      buildPath: "build/javascript/",
+      transformGroup: 'js',
+      buildPath: 'build/javascript/',
       files: [
         {
-          format: "javascript/esm",
-          destination: "index.ts",
+          format: 'javascript/esm',
+          destination: 'index.ts',
         },
       ],
     },
   },
 });
+
+await $`rm -rf build`;
 
 myStyleDictionary.buildAllPlatforms();
 

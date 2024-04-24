@@ -6,7 +6,7 @@ import tseslint from 'typescript-eslint';
 /** @type {import('eslint').Linter.FlatConfig[]} */
 export default tseslint.config(
   {
-    ignores: ['lib', 'output'],
+    ignores: ['lib', 'output', 'storybook-static'],
   },
   tseslint.configs.base,
   tseslint.configs.eslintRecommended,
@@ -23,12 +23,16 @@ export default tseslint.config(
       '@typescript-eslint/consistent-type-exports': 'error',
     },
   },
-  {
-    plugins: {
-      '@builder.io/mitosis': mitosisPlugin,
-    },
-    rules: mitosisPlugin.configs.recommended.rules,
-  },
+  /**
+   * @TODO
+   * Disable due to mitosis eslint bugs on flat config
+   */
+  // {
+  //   plugins: {
+  //     '@builder.io/mitosis': mitosisPlugin,
+  //   },
+  //   rules: mitosisPlugin.configs.recommended.rules,
+  // },
   {
     plugins: { 'simple-import-sort': eslintPluginSimpleImportSort },
     rules: {

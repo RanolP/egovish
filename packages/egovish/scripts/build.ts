@@ -1,6 +1,7 @@
-import esbuild, { BuildOptions } from 'esbuild';
-import { glob, $ } from 'zx';
 import path from 'node:path';
+
+import esbuild, { BuildOptions } from 'esbuild';
+import { $, glob } from 'zx';
 
 await $`rm -rf output`;
 await $`rm -rf lib`;

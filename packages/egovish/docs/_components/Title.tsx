@@ -1,5 +1,5 @@
-import React from 'react';
 import tokens from '@egovish/tokens';
+import React from 'react';
 
 interface Props {
   scope?: string;
