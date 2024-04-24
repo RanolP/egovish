@@ -25,8 +25,21 @@
   body.dark :where(h6:not(.sb-anchor, .sb-unstyled, .sb-unstyled h6)),
   body.dark :where(li:not(.sb-anchor, .sb-unstyled, .sb-unstyled li)),
   body.dark :where(img:not(.sb-anchor, .sb-unstyled, .sb-unstyled img)),
-  body.dark .docblock-colorpalette > div > div > div {
+  body.dark .docblock-colorpalette > div > div > div,
+  body.dark :where(table:not(.sb-anchor, .sb-unstyled, .sb-unstyled table)) tr th,
+  body.dark :where(table:not(.sb-anchor, .sb-unstyled, .sb-unstyled table)) tr td {
     color: var(--color-palette-grayscale-10);
+  }
+  body.dark :where(table:not(.sb-anchor, .sb-unstyled, .sb-unstyled table)) {
+    background-color: var(--color-palette-grayscale-90);
+  }
+  body.dark :where(table:not(.sb-anchor, .sb-unstyled, .sb-unstyled table)) tr,
+  body.dark :where(table:not(.sb-anchor, .sb-unstyled, .sb-unstyled table)) tr th,
+  body.dark :where(table:not(.sb-anchor, .sb-unstyled, .sb-unstyled table)) tr td {
+    border-color: var(--color-palette-grayscale-60);
+  }
+  body.dark :where(table:not(.sb-anchor, .sb-unstyled, .sb-unstyled table)) tr:nth-of-type(2n) {
+    background-color: var(--color-palette-grayscale-80);
   }
   body.dark .docblock-colorpalette > div > div {
     color: var(--color-palette-grayscale-30);
