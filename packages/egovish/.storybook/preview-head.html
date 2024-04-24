@@ -24,8 +24,15 @@
   body.dark :where(h5:not(.sb-anchor, .sb-unstyled, .sb-unstyled h5)),
   body.dark :where(h6:not(.sb-anchor, .sb-unstyled, .sb-unstyled h6)),
   body.dark :where(li:not(.sb-anchor, .sb-unstyled, .sb-unstyled li)),
-  body.dark :where(img:not(.sb-anchor, .sb-unstyled, .sb-unstyled img)) {
+  body.dark :where(img:not(.sb-anchor, .sb-unstyled, .sb-unstyled img)),
+  body.dark .docblock-colorpalette > div > div > div {
     color: var(--color-palette-grayscale-10);
+  }
+  body.dark .docblock-colorpalette > div > div {
+    color: var(--color-palette-grayscale-30);
+  }
+  body.dark .docblock-colorpalette > div > div > div > div > div > div {
+    color: var(--color-palette-grayscale-50);
   }
   body.dark :where(p:not(.sb-anchor, .sb-unstyled, .sb-unstyled p)) code {
     background: var(--color-palette-grayscale-80);
