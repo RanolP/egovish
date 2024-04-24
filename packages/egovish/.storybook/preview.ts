@@ -1,3 +1,5 @@
+import '@egovish/tokens/variables.css';
+
 import tokens from '@egovish/tokens';
 import { Preview } from '@storybook/react';
 
