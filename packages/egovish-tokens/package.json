@@ -1,6 +1,6 @@
 {
   "name": "@egovish/tokens",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "description": "Design Tokens for egovish",
   "author": "RanolP <me@ranolp.dev>",
@@ -22,6 +22,9 @@
       "default": "./build/css/variables.css"
     }
   },
+  "files": [
+    "build"
+  ],
   "devDependencies": {
     "style-dictionary": "^3.9.2",
     "style-dictionary-utils": "^2.2.1",
